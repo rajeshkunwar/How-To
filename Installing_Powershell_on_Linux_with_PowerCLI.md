@@ -10,51 +10,51 @@ The installation method for RHEL systems are little different but the following 
 
 - You can verify if powershell is installed by simply typing powershell on the command line and it will take you ta a powershell prompt as follows:
        
-            [root@localhost ~]# powershell
-            PowerShell
-            Copyright (C) Microsoft Corporation. All rights reserved.
+     [root@localhost ~]# powershell
+     PowerShell
+     Copyright (C) Microsoft Corporation. All rights reserved.
 
-            PS /root>
+      PS /root>
                 
 - Verify that the modules are loaded properly by issuing any powershell command like such:
 
-            PS /root> Write-Host "This is Powershell"
-            This is Powershell
+      PS /root> Write-Host "This is Powershell"
+      This is Powershell
 
 **Insalling PowerCLI Core**
     
 - Download the PowerCLI zip file
     
-            #) curl -sSL -o PowerCLI_Core.zip https://download3.vmware.com/software/vmw-tools/powerclicore/PowerCLI_Core.zip
+      #) curl -sSL -o PowerCLI_Core.zip https://download3.vmware.com/software/vmw-tools/powerclicore/PowerCLI_Core.zip
     
 - Move the PowerCLI zip file to Powershell Modules directory located in /opt/microsoft/powershell/6.0.0-alpha.18/Modules/ and unzip it as follows.
         
-            #) mv PowerCLI_Core.zip //opt/microsoft/powershell/6.0.0-alpha.18/Modules/
-            #) cd /opt/microsoft/powershell/6.0.0-alpha.18/Modules/
-            #) unzip PowerCLI_Core.zip
+      #) mv PowerCLI_Core.zip //opt/microsoft/powershell/6.0.0-alpha.18/Modules/
+      #) cd /opt/microsoft/powershell/6.0.0-alpha.18/Modules/
+      #) unzip PowerCLI_Core.zip
         
 - Unzipping creates the following files
     
-        __MACOSX  open_source_license.txt  PowerCLI.Cis  PowerCLI.Cis.zip  PowerCLI_Core.zip  PowerCLI.Vds.zip  PowerCLI.ViCore.zip  README.md  Start-PowerCLI.ps1
+      __MACOSX  open_source_license.txt  PowerCLI.Cis  PowerCLI.Cis.zip  PowerCLI_Core.zip  PowerCLI.Vds.zip  PowerCLI.ViCore.zip  README.md  Start-PowerCLI.ps1
         
 - Unzip the PowerCLI.Cis.zip, PowerCLI_Core.zip and PowerCLI.Vds.zip in the same directory. PowerCLI can function without other files and only these three modules are 
 needed but its wiser to keep all of them as they are.
 
-            #) unzip PowerCLI.Cis.zip
-            #) unzip PowerCLI_Core.zip
-            #) unzip PowerCLI.Vds.zip
+    #) unzip PowerCLI.Cis.zip
+    #) unzip PowerCLI_Core.zip
+    #) unzip PowerCLI.Vds.zip
     
     
 **Test PowerCLI**
     
 - To test PowerCLI is installed properly do the following:
     
-            #) powershell
-             PS /root> Get-Module -ListAvailable PowerCLI* | Import-Module
+      #) powershell
+      PS /root> Get-Module -ListAvailable PowerCLI* | Import-Module
         
 - Now try connecting to vcenter:
         
-            PS /root> Connect-VIServer -Server vcenter.server.com   -User DOMAIN\username   -Password "YourPassword"
+      PS /root> Connect-VIServer -Server vcenter.server.com   -User DOMAIN\username   -Password "YourPassword"
         
 NOTE:
     
@@ -75,18 +75,18 @@ with CentOS 7 can’t be used and must be replaced.
         
     - Do the following to resolve this:
             
-            #) yum -y groupinstall “Development Tools”
-            #) curl -sSL -o curl-7.52.1.tar.gz https://curl.haxx.se/download/curl-7.52.1.tar.gz
-            #) tar -zxvf curl-7.52.1.tar.gz
-            #) cd curl-7.52.1
-            #) ./configure
-            #) make
-            #) make install
+    #) yum -y groupinstall “Development Tools”
+    #) curl -sSL -o curl-7.52.1.tar.gz https://curl.haxx.se/download/curl-7.52.1.tar.gz
+    #) tar -zxvf curl-7.52.1.tar.gz
+    #) cd curl-7.52.1
+    #) ./configure
+    #) make
+    #) make install
         
 - Verify that the curl version is built with OpenSSL
             
-            #) /usr/local/bin/curl --version
-                curl 7.52.1 (x86_64-pc-linux-gnu) libcurl/7.52.1 OpenSSL/1.0.1e
+      #) /usr/local/bin/curl --version
+      curl 7.52.1 (x86_64-pc-linux-gnu) libcurl/7.52.1 OpenSSL/1.0.1e
                 
                 
 - Modify LD_CONFIG_PATH
@@ -96,7 +96,7 @@ with CentOS 7 can’t be used and must be replaced.
 
     - Follow the procedure below to set the path appropriately.
             
-            #) cd /etc/ld.so.conf.d/
+          #) cd /etc/ld.so.conf.d/
             
         - Create a file called libcurl.conf and enter
                 
@@ -106,7 +106,7 @@ with CentOS 7 can’t be used and must be replaced.
                 
     - Run "ldconfig" to update the shared library cache.
             
-            #) ldconfig
+          #) ldconfig
             
 **User PowerCLI to connect to vCenter**
     
