@@ -40,9 +40,9 @@ The installation method for RHEL systems are little different but the following 
 - Unzip the PowerCLI.Cis.zip, PowerCLI_Core.zip and PowerCLI.Vds.zip in the same directory. PowerCLI can function without other files and only these three modules are 
 needed but its wiser to keep all of them as they are.
 
-    #) unzip PowerCLI.Cis.zip
-    #) unzip PowerCLI_Core.zip
-    #) unzip PowerCLI.Vds.zip
+        #) unzip PowerCLI.Cis.zip
+        #) unzip PowerCLI_Core.zip
+        #) unzip PowerCLI.Vds.zip
     
     
 **Test PowerCLI**
@@ -75,13 +75,13 @@ with CentOS 7 can’t be used and must be replaced.
         
     - Do the following to resolve this:
             
-        #) yum -y groupinstall “Development Tools”
-        #) curl -sSL -o curl-7.52.1.tar.gz https://curl.haxx.se/download/curl-7.52.1.tar.gz
-        #) tar -zxvf curl-7.52.1.tar.gz
-        #) cd curl-7.52.1
-        #) ./configure
-        #) make
-        #) make install
+            #) yum -y groupinstall “Development Tools”
+            #) curl -sSL -o curl-7.52.1.tar.gz https://curl.haxx.se/download/curl-7.52.1.tar.gz
+            #) tar -zxvf curl-7.52.1.tar.gz
+            #) cd curl-7.52.1
+            #) ./configure
+            #) make
+            #) make install
         
 - Verify that the curl version is built with OpenSSL
             
