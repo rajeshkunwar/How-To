@@ -75,13 +75,13 @@ with CentOS 7 can’t be used and must be replaced.
         
     - Do the following to resolve this:
             
-    #) yum -y groupinstall “Development Tools”
-    #) curl -sSL -o curl-7.52.1.tar.gz https://curl.haxx.se/download/curl-7.52.1.tar.gz
-    #) tar -zxvf curl-7.52.1.tar.gz
-    #) cd curl-7.52.1
-    #) ./configure
-    #) make
-    #) make install
+        #) yum -y groupinstall “Development Tools”
+        #) curl -sSL -o curl-7.52.1.tar.gz https://curl.haxx.se/download/curl-7.52.1.tar.gz
+        #) tar -zxvf curl-7.52.1.tar.gz
+        #) cd curl-7.52.1
+        #) ./configure
+        #) make
+        #) make install
         
 - Verify that the curl version is built with OpenSSL
             
