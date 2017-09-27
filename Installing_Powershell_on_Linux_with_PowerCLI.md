@@ -4,7 +4,7 @@ The installation method for RHEL systems are little different but the following 
 
 **Installing Powershell**
 
-            #) sudo yum -y install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-alpha.18/powershell-6.0.0_alpha.18-1.el7.centos.x86_64.rpm
+    #) sudo yum -y install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-alpha.18/powershell-6.0.0_alpha.18-1.el7.centos.x86_64.rpm
     
 - This installs powershell in /opt/microsoft/powershell/6.0.0-alpha.18/ directory.
 
